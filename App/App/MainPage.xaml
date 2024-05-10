@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="App.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:app="clr-namespace:App">
+
+    <ScrollView>
+        <VerticalStackLayout
+            x:Name="ListLayout"
+            Padding="20"
+            Spacing="20">
+            <Button
+                Clicked="Button_Clicked"
+                HorizontalOptions="Center"
+                Text="Toggle Width" />
+
+            <VerticalStackLayout
+                x:Name="Container1"
+                MinimumWidthRequest="100"
+                Spacing="20">
+
+                <Border
+                    BackgroundColor="Yellow"
+                    HeightRequest="100"
+                    Stroke="Firebrick"
+                    StrokeThickness="10">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20" />
+                    </Border.StrokeShape>
+                </Border>
+
+                <VerticalStackLayout BackgroundColor="Orange" HeightRequest="100" />
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout BackgroundColor="Black" HeightRequest="2" />
+
+            <Button
+                Clicked="Button2_Clicked"
+                HorizontalOptions="Center"
+                Text="Toggle FAB" />
+
+            <app:FloatingActionButton
+                x:Name="FloatingActionButton"
+                IconImageSource="add.png"
+                Text="Add something" />
+
+            <VerticalStackLayout BackgroundColor="Black" HeightRequest="2" />
+
+            <Button
+                Clicked="Button3_Clicked"
+                HorizontalOptions="Center"
+                Text="Go to second page" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

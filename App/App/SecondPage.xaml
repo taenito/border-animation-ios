@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="App.SecondPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:app="clr-namespace:App"
+    Title="SecondPage"
+    x:DataType="app:SecondPageModel">
+
+    <Grid>
+
+        <ContentView IsVisible="{Binding IsLoading}">
+
+            <Label
+                HorizontalOptions="Center"
+                Text="Loading ..."
+                VerticalOptions="Center" />
+
+        </ContentView>
+
+        <ContentView IsVisible="{Binding IsLoading, Converter={StaticResource InvertedBoolConverter}}">
+
+            <ScrollView>
+                <VerticalStackLayout Padding="0,0,0,20" Spacing="15">
+
+                    <app:ItemView BindingContext="{Binding Item}" />
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </ContentView>
+    </Grid>
+
+</ContentPage>

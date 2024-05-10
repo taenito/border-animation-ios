@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="App.ItemView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:app="clr-namespace:App"
+    x:DataType="app:ItemViewModel">
+
+    <VerticalStackLayout>
+        <VerticalStackLayout Padding="15" Spacing="10">
+
+            <VerticalStackLayout Spacing="10">
+                <Grid ColumnDefinitions="*,Auto">
+                    <VerticalStackLayout Padding="10" Spacing="20">
+
+                        <HorizontalStackLayout Spacing="6">
+                            <Border
+                                BackgroundColor="Green"
+                                HeightRequest="12"
+                                HorizontalOptions="Start"
+                                StrokeThickness="0"
+                                WidthRequest="12">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="6" />
+                                </Border.StrokeShape>
+                            </Border>
+
+                            <ContentView
+                                BackgroundColor="Blue"
+                                HeightRequest="12"
+                                HorizontalOptions="Start"
+                                WidthRequest="12" />
+
+                            <Label Text="Test" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <Label Grid.Column="1" Text="Test" />
+                </Grid>
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Margin="0,10" IsVisible="{Binding ShowError}">
+
+                <Border
+                    Padding="10"
+                    BackgroundColor="#FEFCE7"
+                    Stroke="#C97A00"
+                    StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15" />
+                    </Border.StrokeShape>
+                    <Label Text="{Binding ErrorText}" />
+                </Border>
+
+            </VerticalStackLayout>
+
+            <Label Text="Test" />
+            <Label Text="Test" />
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentView>
